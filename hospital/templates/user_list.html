@@ -8,6 +8,7 @@
     <title>Title</title>
 </head>
 <body>
+
 <div>
 <table>
   <thead>
@@ -24,15 +25,28 @@
         <tr><td>{{ user.id }}</td>
             <td>{{ user.email }}</td>
         <td>
-        <i class="material-icons button edit">edit</i>
-        <i class="material-icons button delete">delete</i>
+            <button type="button" value = "1" class="read-user">Edit </button>
+{#        <i class="read-user button edit" data-id="{% url 'read_user' user.id %}">edit</i>#}
+            <button type="button" value = "1" class="read-user">Delete </button>
       </td>
         </tr>
 {% endfor %}
   </tbody>
 </table>
+    <script>
+    $(".read-user").click(function() {
+        console.log("hello")
+        alert("hello");
+      //  $(this).modalForm({formURL: $(this).data('id')});    // Find the row
+    //var $text = $row.find(".nr").text(); // Find the text
+
+    // Let's test it out
+
+});
+</script>
     </div>
 </body>
 </html>
+
 
 {% endblock %}
